@@ -262,6 +262,22 @@ export const BOT_PATTERNS: BotPattern[] = [
  * where it also wins the first-match race.
  */
 export const EXTRA_BOT_PATTERNS: BotPattern[] = [
+  // --- Major Search Engines --------------------------------------------------
+  { pattern: "\\bgooglebot\\b", category: "search", name: "Googlebot", operator: "Google", purpose: "search" },
+  { pattern: "\\bgoogle-inspectiontool\\b", category: "search", name: "Google Inspection Tool", operator: "Google", purpose: "search" },
+  { pattern: "\\bgoogleother\\b", category: "search", name: "GoogleOther", operator: "Google", purpose: "search" },
+  { pattern: "\\bbingbot\\b", category: "search", name: "Bingbot", operator: "Microsoft", purpose: "search" },
+  { pattern: "\\bmsnbot\\b", category: "search", name: "MSNBot", operator: "Microsoft", purpose: "search" },
+  { pattern: "\\bduckduckbot\\b", category: "search", name: "DuckDuckBot", operator: "DuckDuckGo", purpose: "search" },
+  { pattern: "\\bbaiduspider\\b", category: "search", name: "Baiduspider", operator: "Baidu", purpose: "search" },
+  { pattern: "\\byandexbot\\b", category: "search", name: "YandexBot", operator: "Yandex", purpose: "search" },
+  { pattern: "\\bapplebot\\b", category: "search", name: "Applebot", operator: "Apple", purpose: "search" },
+
+  // --- SEO & Site Auditing ---------------------------------------------------
+  { pattern: "\\bahrefsbot\\b", category: "seo", name: "AhrefsBot", operator: "Ahrefs", purpose: "seo" },
+  { pattern: "\\bsemrushbot\\b", category: "seo", name: "SemrushBot", operator: "Semrush", purpose: "seo" },
+  { pattern: "\\bdotbot\\b", category: "seo", name: "DotBot", operator: "Moz", purpose: "seo" },
+
   // --- AI: training crawlers -------------------------------------------------
   // Fetch pages to build a corpus. They do not send anyone back to the site.
   { pattern: "\\bgptbot\\b", category: "ai", name: "GPTBot", operator: "OpenAI", purpose: "ai_training" },
