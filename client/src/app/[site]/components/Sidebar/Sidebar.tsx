@@ -82,28 +82,24 @@ function SidebarContent() {
           />
         </div>
         <SidebarComponents.SectionHeader>{t("Traffic")}</SidebarComponents.SectionHeader>
-        {IS_CLOUD && (
-          <SidebarComponents.Item
-            label={t("Pages")}
-            active={isActiveTab("pages")}
-            href={getTabPath("pages")}
-            icon={<File className="w-4 h-4" />}
-          />
-        )}
+        <SidebarComponents.Item
+          label={t("Pages")}
+          active={isActiveTab("pages")}
+          href={getTabPath("pages")}
+          icon={<File className="w-4 h-4" />}
+        />
         <SidebarComponents.Item
           label={t("Globe")}
           active={isActiveTab("globe")}
           href={getTabPath("globe")}
           icon={<Globe2 className="w-4 h-4" />}
         />
-        {IS_CLOUD && (
-          <SidebarComponents.Item
-            label={t("Bots")}
-            active={isActiveTab("bots")}
-            href={getTabPath("bots")}
-            icon={<Bot className="w-4 h-4" />}
-          />
-        )}
+        <SidebarComponents.Item
+          label={t("Bots")}
+          active={isActiveTab("bots")}
+          href={getTabPath("bots")}
+          icon={<Bot className="w-4 h-4" />}
+        />
         <SidebarComponents.SectionHeader>{t("Behavior")}</SidebarComponents.SectionHeader>
         <SidebarComponents.Item
           label={t("Sessions")}
@@ -184,7 +180,7 @@ function SidebarContent() {
           href={getTabPath("errors")}
           icon={<AlertTriangle className="w-4 h-4" />}
         />
-        {IS_CLOUD && !isMobileSite && (
+        {!isMobileSite && (
           <SidebarComponents.Item
             label={t("Performance")}
             active={isActiveTab("performance")}
@@ -192,10 +188,7 @@ function SidebarContent() {
             icon={<Gauge className="w-4 h-4" />}
           />
         )}
-        {/* API Playground is desktop-only, so on self-hosted builds without Query/Dashboards the header must hide with it */}
-        <div className={IS_CLOUD || DEPLOYMENT ? undefined : "hidden md:block"}>
-          <SidebarComponents.SectionHeader>{t("Explore")}</SidebarComponents.SectionHeader>
-        </div>
+        <SidebarComponents.SectionHeader>{t("Explore")}</SidebarComponents.SectionHeader>
         <div className="hidden md:block">
           <SidebarComponents.Item
             label={t("API Playground")}
@@ -204,22 +197,18 @@ function SidebarContent() {
             icon={<Code className="w-4 h-4" />}
           />
         </div>
-        {(IS_CLOUD || DEPLOYMENT) && (
-          <>
-            <SidebarComponents.Item
-              label={t("Query")}
-              active={isActiveTab("query")}
-              href={getTabPath("query")}
-              icon={<Database className="w-4 h-4" />}
-            />
-            <SidebarComponents.Item
-              label={t("Dashboards")}
-              active={isActiveTab("dashboards")}
-              href={getTabPath("dashboards")}
-              icon={<LayoutGrid className="w-4 h-4" />}
-            />
-          </>
-        )}
+        <SidebarComponents.Item
+          label={t("Query")}
+          active={isActiveTab("query")}
+          href={getTabPath("query")}
+          icon={<Database className="w-4 h-4" />}
+        />
+        <SidebarComponents.Item
+          label={t("Dashboards")}
+          active={isActiveTab("dashboards")}
+          href={getTabPath("dashboards")}
+          icon={<LayoutGrid className="w-4 h-4" />}
+        />
         {/* <SidebarComponents.Item
           label="Reports"
           active={isActiveTab("reports")}
